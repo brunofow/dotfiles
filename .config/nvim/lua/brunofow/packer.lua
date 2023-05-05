@@ -18,13 +18,12 @@ return require('packer').startup(function(use)
     as = 'tokyonight',
   })
 
-  use({
-    'wuelnerdotexe/vim-enfocado',
-    as = 'enfocado',
-    config = function ()
-      vim.cmd('colorscheme enfocado')
-    end
+  use ({
+     'morhetz/gruvbox',
+     as = 'gruvbox'
   })
+
+  -- use 'wuelnerdotexe/vim-enfocado'
   use 'wuelnerdotexe/vim-astro'
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   use 'nvim-lua/plenary.nvim'
@@ -37,17 +36,22 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+  use 'DaikyXendo/nvim-tree.lua'
+
+  use 'nvim-tree/nvim-web-devicons'
+
+  use 'DaikyXendo/nvim-material-icon'
 
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
+  use {
+    'Exafunction/codeium.vim',
+    config = function ()
+      vim.keymap.set('i', '<S-Tab>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+    end
   }
 
   use {
@@ -61,6 +65,7 @@ return require('packer').startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
   use('jose-elias-alvarez/null-ls.nvim')
   use('MunifTanjim/prettier.nvim')
+  use 'mg979/vim-visual-multi'
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  requires = {
@@ -83,6 +88,7 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
+  use 'glepnir/lspsaga.nvim'
   use {
   "folke/trouble.nvim",
   requires = "kyazdani42/nvim-web-devicons",
@@ -94,4 +100,14 @@ return require('packer').startup(function(use)
     }
   end
 }
+use {
+  'phaazon/mind.nvim',
+  branch = 'v2.2',
+  requires = { 'nvim-lua/plenary.nvim' },
+  config = function()
+    require'mind'.setup()
+  end
+}
+
+use 'SaschaMendel/vim-quicktype'
 end)

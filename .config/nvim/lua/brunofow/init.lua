@@ -1,3 +1,3 @@
-require("brunofow.remap")
-require("brunofow.set")
-require("brunofow.clipboard")
+require('brunofow.remap')
+require('brunofow.set')
+require('brunofow.clipboard')

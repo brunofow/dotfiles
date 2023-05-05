@@ -25,8 +25,9 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 
 vim.g.enfocado_style = "neon"
 vim.g.astro_typescript = "enable"
 
+vim.g.codeium_no_map_tab = true

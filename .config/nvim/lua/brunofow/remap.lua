@@ -9,6 +9,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
+vim.keymap.set("n", "<leader>cl", vim.cmd.NvimTreeCollapse)
 
 vim.keymap.set("n", "<leader>f", vim.cmd.Prettier)
 

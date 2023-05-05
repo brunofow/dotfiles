@@ -110,16 +110,21 @@ _G.packer_plugins = {
     path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  enfocado = {
-    config = { "\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme enfocado\bcmd\bvim\0" },
+  ["codeium.vim"] = {
+    config = { "\27LJ\2\n-\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\19codeium#Accept\afn\bvimN\1\0\6\0\a\0\t6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0003\4\5\0005\5\6\0B\0\5\1K\0\1\0\1\0\1\texpr\2\0\f<S-Tab>\6i\bset\vkeymap\bvim\0" },
     loaded = true,
-    path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\enfocado",
-    url = "https://github.com/wuelnerdotexe/vim-enfocado"
+    path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\codeium.vim",
+    url = "https://github.com/Exafunction/codeium.vim"
   },
   ["friendly-snippets"] = {
     loaded = true,
     path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  gruvbox = {
+    loaded = true,
+    path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
   },
   harpoon = {
     loaded = true,
@@ -130,6 +135,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -145,6 +155,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["mind.nvim"] = {
+    config = { "\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tmind\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mind.nvim",
+    url = "https://github.com/phaazon/mind.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -172,10 +188,15 @@ _G.packer_plugins = {
     path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-material-icon"] = {
+    loaded = true,
+    path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-material-icon",
+    url = "https://github.com/DaikyXendo/nvim-material-icon"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
-    url = "https://github.com/nvim-tree/nvim-tree.lua"
+    url = "https://github.com/DaikyXendo/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -238,6 +259,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-quicktype"] = {
+    loaded = true,
+    path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-quicktype",
+    url = "https://github.com/SaschaMendel/vim-quicktype"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "C:\\Users\\BrunoCamposLimaBatis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
   }
 }
 
@@ -246,18 +277,22 @@ time([[Defining packer_plugins]], false)
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
--- Config for: nvim-ts-autotag
-time([[Config for nvim-ts-autotag]], true)
-try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
-time([[Config for nvim-ts-autotag]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Config for: enfocado
-time([[Config for enfocado]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme enfocado\bcmd\bvim\0", "config", "enfocado")
-time([[Config for enfocado]], false)
+-- Config for: codeium.vim
+time([[Config for codeium.vim]], true)
+try_loadstring("\27LJ\2\n-\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\19codeium#Accept\afn\bvimN\1\0\6\0\a\0\t6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0003\4\5\0005\5\6\0B\0\5\1K\0\1\0\1\0\1\texpr\2\0\f<S-Tab>\6i\bset\vkeymap\bvim\0", "config", "codeium.vim")
+time([[Config for codeium.vim]], false)
+-- Config for: nvim-ts-autotag
+time([[Config for nvim-ts-autotag]], true)
+try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
+time([[Config for nvim-ts-autotag]], false)
+-- Config for: mind.nvim
+time([[Config for mind.nvim]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tmind\frequire\0", "config", "mind.nvim")
+time([[Config for mind.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")

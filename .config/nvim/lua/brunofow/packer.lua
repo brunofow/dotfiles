@@ -3,6 +3,11 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd.packadd('packer.nvim')
 
+-- This file can be loaded by calling `lua require('plugins')` from your init.vim
+
+-- Only required if you have packer configured as `opt`
+vim.cmd.packadd('packer.nvim')
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -23,6 +28,8 @@ return require('packer').startup(function(use)
      as = 'gruvbox'
   })
 
+  use "rebelot/kanagawa.nvim"
+
   -- use 'wuelnerdotexe/vim-enfocado'
   use 'wuelnerdotexe/vim-astro'
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
@@ -36,11 +43,17 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
-  use 'DaikyXendo/nvim-tree.lua'
+  
 
   use 'nvim-tree/nvim-web-devicons'
 
-  use 'DaikyXendo/nvim-material-icon'
+  use {
+  'DaikyXendo/nvim-tree.lua',
+  requires = {
+    'DaikyXendo/nvim-material-icon', -- optional, for file icons
+  },
+  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+}
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -111,3 +124,4 @@ use {
 
 use 'SaschaMendel/vim-quicktype'
 end)
+

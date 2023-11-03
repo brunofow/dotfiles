@@ -15,6 +15,7 @@ prettier.setup({
     "typescript",
     "typescriptreact",
     "yaml",
+    "php"
   },
   cli_options = {
     arrow_parenns = "avoid",

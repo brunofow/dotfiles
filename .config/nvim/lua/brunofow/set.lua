@@ -31,3 +31,4 @@ vim.g.enfocado_style = "neon"
 vim.g.astro_typescript = "enable"
 
 vim.g.codeium_no_map_tab = true
+

@@ -129,13 +129,4 @@ return {
       },
     },
   },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function()
-      local install = require("nvim-treesitter.install")
-      install.compilers = { "zig" }
-      install.prefer_git = false
-    end,
-  },
 }

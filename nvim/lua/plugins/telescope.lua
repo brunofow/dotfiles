@@ -2,7 +2,20 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     keys = {
+      { "<leader><space>", false },
       { "<leader>/", false },
+
+      {
+        "<leader><space>",
+        function()
+          require("telescope.builtin").find_files({
+            hidden = true,
+            no_ignore = false,
+            follow = true,
+          })
+        end,
+        desc = "Find files (custom)",
+      },
       { "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Find files" },
 
       {
@@ -32,7 +45,7 @@ return {
     config = function(_, opts)
       local telescope = require("telescope")
 
-      opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
+      opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
         wrap_results = true,
         layout_strategy = "horizontal",
         layout_config = { prompt_position = "top" },

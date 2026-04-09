@@ -47,17 +47,38 @@ return {
 
       opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
         wrap_results = true,
-        layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top" },
-      })
 
-      opts.pickers = {
-        find_files = {
-          layout_config = {
-            preview_cutoff = 9999,
+        -- "flex" = tenta horizontal (results esquerda / preview direita),
+        -- mas troca para vertical/sem preview quando a janela é pequena.
+        layout_strategy = "flex",
+        sorting_strategy = "ascending",
+        layout_config = {
+          prompt_position = "top",
+
+          -- se a janela for menor que isso, o preview some
+          preview_cutoff = 120,
+
+          -- preferências quando couber horizontal (left/right)
+          horizontal = {
+            preview_width = 0.55,
+            width = 0.95,
+            height = 0.85,
+          },
+
+          -- fallback quando não couber horizontal
+          vertical = {
+            width = 0.95,
+            height = 0.90,
           },
         },
-      }
+      })
+
+      -- aplica especificamente ao picker find_files (vale também pro <leader>pf)
+      opts.pickers = vim.tbl_deep_extend("force", opts.pickers or {}, {
+        find_files = {
+          previewer = true, -- sempre tentar preview
+        },
+      })
 
       telescope.setup(opts)
     end,

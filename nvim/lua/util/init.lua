@@ -35,17 +35,17 @@ function M.cowboy()
   end
 end
 
-function M.dynamic_colorscheme()
-  local hour = tonumber(os.date("%H"))
-
-  local dark = "solarized-osaka"
-  local light = "tokyonight-day"
-
-  if hour >= 7 and hour < 18 then
-    return light
-  else
-    return dark
-  end
-end
+-- function M.dynamic_colorscheme()
+--   local hour = tonumber(os.date("%H"))
+--
+--   local dark = "solarized-osaka"
+--   local light = "tokyonight-day"
+--
+--   if hour >= 7 and hour < 18 then
+--     return light
+--   else
+--     return dark
+--   end
+-- end
 
 return M

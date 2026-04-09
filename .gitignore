@@ -1,0 +1,9 @@
+/*
+
+!/.gitignore
+
+!/nvim/
+!/powershell/
+
+!/nvim/**
+!/powershell/**

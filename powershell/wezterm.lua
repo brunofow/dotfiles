@@ -30,7 +30,10 @@ config.window_padding = {
 	bottom = 0,
 }
 
-config.max_fps = 180
 -- Misc
+config.max_fps = 180
+
+-- Plugins
+require("plugins.wez-tmux.plugin").apply_to_config(config)
 
 return config

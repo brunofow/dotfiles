@@ -1,4 +1,4 @@
-$env:POSH_SESSION_ID = "e2c56dc9-4e4d-419b-b4e7-7b4764ef3c58";
+$env:POSH_SESSION_ID = "099e0845-4bdd-44e7-89b3-ff1257e1b6a0";
 # remove any existing dynamic module of OMP
 if ($null -ne (Get-Module -Name "oh-my-posh-core")) {
     Remove-Module -Name "oh-my-posh-core" -Force

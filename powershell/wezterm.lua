@@ -1,44 +1,36 @@
 local wezterm = require("wezterm")
-
 local config = wezterm.config_builder()
 
+local bg_image_url = os.getenv("LOCALAPPDATA") .. "/powershell/images/bg-blurred-darker.png"
+
+-- Disable the default WSL domain to prevent automatic spawning of WSL shells
 config.wsl_domains = {}
 
+-- Default shell to PowerShell 7
 config.default_prog = { "pwsh.exe", "-NoLogo" }
 
-config.font_size = 10
-config.color_scheme = "JetBrains Mono"
+-- Font settings
+config.font_size = 11
+config.font = wezterm.font("JetBrains Mono")
 
-function dynamic_background()
-	local hour = tonumber(os.date("%H"))
+-- Colors
+config.colors = {
+	cursor_bg = "#c5c5c5",
+	cursor_border = "#c5c5c5",
+}
 
-	local day = {
-		source = {
-			File = "C:\\Users\\01702313\\AppData\\Local\\powershell\\images\\2-apartment.png",
-		},
-		hsb = {
-			brightness = 0.3,
-			saturation = 0.6,
-		},
-	}
+-- Appearance
+config.window_decorations = "RESIZE"
+config.hide_tab_bar_if_only_one_tab = true
+config.window_background_image = bg_image_url
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
+}
 
-	local night = {
-		source = {
-			File = "C:\\Users\\01702313\\AppData\\Local\\powershell\\images\\glowing-city.jpg",
-		},
-		hsb = {
-			brightness = 0.3,
-			saturation = 0.6,
-		},
-	}
-
-	if hour >= 7 and hour < 18 then
-		return day
-	else
-		return night
-	end
-end
-
-config.background = { dynamic_background() }
+config.max_fps = 180
+-- Misc
 
 return config

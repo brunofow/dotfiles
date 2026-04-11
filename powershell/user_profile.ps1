@@ -1,12 +1,12 @@
 # Prompt (Oh My Posh) com cache
 $OMP_CACHE = "$PSScriptRoot\omp-init.ps1"
 
-if (Test-Path $OMP_CACHE) {
-    . $OMP_CACHE
-} else {
-    # Fallback caso o arquivo de cache suma
-    oh-my-posh init pwsh --config "$PSScriptRoot\brunofow.omp.json" | Invoke-Expression
+if(-not (Test-Path $OMP_CACHE)) {
+    Write-Host "Gerando novo cache do Oh My Posh..." -ForegroundColor Cyan
+    oh-my-posh init pwsh --config "$PSScriptRoot\brunofow.omp.json" --print | Out-File -FilePath $OMP_CACHE -Encoding utf8
 }
+
+. $OMP_CACHE
 
 # =====================================================================
 # Icons
@@ -34,10 +34,10 @@ if (Get-Module -Name PSReadLine)
 # Alias & Wrapper Functions
 # =====================================================================
 function EzaList
-{ eza -1 -l $args
+{ eza -1 -l --icons $args
 }
 function EzaListAll
-{ eza -1 -l -a $args
+{ eza -1 -l -a --icons $args
 }
 
 function Touch-File {

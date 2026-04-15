@@ -56,6 +56,7 @@ Set-Alias grep findstr
 Set-Alias cat bat
 Set-Alias ls EzaList
 Set-Alias la EzaListAll
+Set-Alias g lazygit
 
 # =====================================================================
 # Utilities

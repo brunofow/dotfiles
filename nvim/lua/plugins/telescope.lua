@@ -27,6 +27,18 @@ return {
       },
 
       {
+        "<leader>pd",
+        function()
+          local cwd = vim.fn.expand("%:p:h") -- diretório do arquivo atual
+          require("telescope.builtin").live_grep({
+            cwd = cwd,
+            prompt_title = "Grep (cwd: " .. vim.fn.fnamemodify(cwd, ":t") .. ")",
+          })
+        end,
+        desc = "Grep only in current file dir",
+      },
+
+      {
         "<leader>gb",
         function()
           require("telescope.builtin").git_branches({ cwd = require("lazy.core.config").options.root })
